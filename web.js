@@ -3,12 +3,12 @@
 var express = require('express');
 var app = express.createServer(express.logger());
 var fs = require('fs');
-var filename = "index.html"
-var buf = new Buffer();
+var filename = "index.html";
+var buf = new Buffer(fs.readFileSync(filename));
 var out;
 
-buf = fs.readFileSync(filename);
-out = buf.toString();
+out = fs.readFileSync(filename);
+//out = buf.toString();
 
 app.get('/', function(request, response)
 {
