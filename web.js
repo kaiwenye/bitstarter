@@ -7,8 +7,8 @@ var filename = "index.html";
 var buf = new Buffer(fs.readFileSync(filename));
 var out;
 
-out = fs.readFileSync(filename);
-//out = buf.toString();
+buf = fs.readFileSync(filename);
+out = buf.toString();
 
 app.get('/', function(request, response)
 {
