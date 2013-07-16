@@ -8,7 +8,7 @@ buf = new Buffer(256);
 
 app.get('/', function(request, response)
 {
-  response.send(console.log(buf.toString(fs.readFile(index.html))));
+  response.send(console.log(buf.toString(fs.readFile(index.html, 0, buf.length))));
 });
 
 var port = process.env.PORT || 5000;
